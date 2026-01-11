@@ -1,0 +1,70 @@
+[gd_scene load_steps=6 format=4 uid="uid://b5wn3kgut5f7"]
+
+[ext_resource type="PackedScene" uid="uid://drnfb2ioal1wc" path="res://levels/level.tscn" id="1_qngmg"]
+[ext_resource type="Script" uid="uid://cg7g7hmr4m00w" path="res://interactables/messenger.gd" id="2_il0wa"]
+[ext_resource type="Texture2D" uid="uid://buayg4cbwgjxq" path="res://resources/textures/spritesheet.png" id="3_0mest"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rcf0d"]
+atlas = ExtResource("3_0mest")
+region = Rect2(48, 0, 8, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cvmkx"]
+size = Vector2(12, 11)
+
+[node name="Level" instance=ExtResource("1_qngmg")]
+_title = "Nemoria Entrance"
+
+[node name="BlocksLayer" parent="." index="1"]
+tile_map_data = PackedByteArray("AAAAAA0AAAABAAEAAAABAA0AAAABAAEAAAACAA0AAAABAAEAAAADAA0AAAABAAEAAAAEAA0AAAABAAEAAAAFAA0AAAABAAEAAAAGAA0AAAABAAEAAAAHAA0AAAABAAEAAAAIAA0AAAABAAEAAAAJAA0AAAABAAEAAAAKAA0AAAABAAEAAAALAA0AAAACAAEAAAALAA4AAAACAAIAAAALAA8AAAACAAIAAAALABAAAAACAAIAAAALABEAAAACAAIAAAAKAA4AAAABAAIAAAAKAA8AAAABAAIAAAAKABAAAAABAAIAAAAKABEAAAABAAIAAAAJABEAAAABAAIAAAAJABAAAAABAAIAAAAJAA8AAAABAAIAAAAJAA4AAAABAAIAAAAIAA4AAAABAAIAAAAHAA4AAAABAAIAAAAIAA8AAAABAAIAAAAIABAAAAABAAIAAAAIABEAAAABAAIAAAAHABEAAAABAAIAAAAHABAAAAABAAIAAAAHAA8AAAABAAIAAAAGAA4AAAABAAIAAAAFAA4AAAABAAIAAAAEAA4AAAABAAIAAAADAA4AAAABAAIAAAACAA4AAAABAAIAAAABAA4AAAABAAIAAAAAAA4AAAABAAIAAAAAAA8AAAABAAIAAAABAA8AAAABAAIAAAACAA8AAAABAAIAAAADAA8AAAABAAIAAAAEAA8AAAABAAIAAAAFAA8AAAABAAIAAAAGAA8AAAABAAIAAAAGABAAAAABAAIAAAAFABAAAAABAAIAAAAEABAAAAABAAIAAAADABAAAAABAAIAAAACABAAAAABAAIAAAABABAAAAABAAIAAAAAABAAAAABAAIAAAAAABEAAAABAAIAAAABABEAAAABAAIAAAACABEAAAABAAIAAAADABEAAAABAAIAAAAEABEAAAABAAIAAAAFABEAAAABAAIAAAAGABEAAAABAAIAAAAQAAoAAAAAAAEAAAAQAAsAAAAAAAIAAAAQAAwAAAAAAAIAAAAQAA0AAAAAAAIAAAAQAA4AAAAAAAIAAAAQAA8AAAAAAAIAAAAQABAAAAAAAAIAAAAQABEAAAAAAAIAAAARAAoAAAABAAEAAAASAAoAAAABAAEAAAATAAoAAAABAAEAAAAUAAoAAAABAAEAAAAVAAoAAAABAAEAAAAWAAoAAAABAAEAAAAXAAoAAAABAAEAAAA=")
+
+[node name="PlatformsLayer" parent="." index="3"]
+tile_map_data = PackedByteArray("AAAYACEAAAAIAAMAAAAZACEAAAAIAAMAAAAaACEAAAAIAAMAAAAbACEAAAAIAAMAAAAcACEAAAAIAAMAAAAdACEAAAAIAAMAAAAeACEAAAAIAAMAAAAfACEAAAAIAAMAAAAYABwAAAAIAAMAAAAZABwAAAAIAAMAAAAaABwAAAAIAAMAAAAbABwAAAAIAAMAAAAcABwAAAAIAAMAAAAdABwAAAAIAAMAAAAeABwAAAAIAAMAAAAfABwAAAAIAAMAAAAfABcAAAAIAAMAAAAeABcAAAAIAAMAAAAdABcAAAAIAAMAAAAcABcAAAAIAAMAAAA=")
+
+[node name="Messenger" type="Area2D" parent="." index="4"]
+position = Vector2(31, 96)
+script = ExtResource("2_il0wa")
+_message_1 = "Ah, another archeologist? Welcome! This is a great day for humanity, these ruins were lost for far too long! Can't wait to dig up its secrets! Be curious! Explore everything!"
+_prompt = "Talk"
+metadata/_custom_type_script = "uid://cg7g7hmr4m00w"
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Messenger" index="0"]
+texture = SubResource("AtlasTexture_rcf0d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Messenger" index="1"]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_cvmkx")
+
+[node name="Messenger2" type="Area2D" parent="." index="5"]
+position = Vector2(57, 96)
+script = ExtResource("2_il0wa")
+_message_1 = "After almost 300 years we finally found it! The entrance to the ancient capital of the Ancient Nemorian Empire, finally found! This is a great day for us archeologists! Maybe we can learn how it got destroyed?"
+_message_2 = "The city was once the center of the world, but was completely destroyed in the war that preceded the fall of the empire. With the years, the location of the ruins was lost."
+_prompt = "Talk"
+metadata/_custom_type_script = "uid://cg7g7hmr4m00w"
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Messenger2" index="0"]
+texture = SubResource("AtlasTexture_rcf0d")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Messenger2" index="1"]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_cvmkx")
+
+[node name="Messenger3" type="Area2D" parent="." index="6"]
+position = Vector2(153, 72)
+script = ExtResource("2_il0wa")
+_message_1 = "The Nemorians at their peak controlled all the known world at the time's trade routes. They had superior magics, capable of building flying machines. Most of which was lost after the war."
+_message_2 = "Supposedly, the capital was so badly destroyed that nothing was left to restore. No one returned, no reason to. No wonder it's location was forgotten. A war so destructive that this city was erased from both space and time."
+_prompt = "Talk"
+metadata/_custom_type_script = "uid://cg7g7hmr4m00w"
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Messenger3" index="0"]
+texture = SubResource("AtlasTexture_rcf0d")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Messenger3" index="1"]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_cvmkx")

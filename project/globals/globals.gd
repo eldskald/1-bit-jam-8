@@ -2,11 +2,12 @@ extends Node
 
 const game_screen_size = Vector2i(192, 144)
 
-const _first_lv_coords = Vector2i(1, 1)
+const _first_lv_coords = Vector2i(0, 0)
 const _map = [
-	[-1, 2, -1],
-	[ 3, 0,  4],
-	[-1, 1, -1],
+	[ 0,  1, -1],
+	[-1,  2, -1],
+	[-1,  3, -1],
+	[-1,  4,  5],
 ]
 
 @export var _levels: Array[PackedScene]
@@ -41,9 +42,11 @@ func get_level() -> Level:
 
 
 func load_first_level() -> void:
-	_main.change_level(_levels[0])
-	var start_pos = get_tree().get_nodes_in_group("player_starting_position")[0]
-	_player.position = start_pos.position
+	#_main.change_level(_levels[0])
+	#var start_pos = get_tree().get_nodes_in_group("player_starting_position")[0]
+	#_player.position = start_pos.position
+	_main.change_level(_levels[5])
+	_player.position = Vector2(20, 20)
 
 
 func _go_up() -> void:
