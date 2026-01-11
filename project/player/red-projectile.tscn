@@ -121,7 +121,7 @@ _data = {
 collision_layer = 0
 collision_mask = 22
 script = ExtResource("1_scig7")
-speed = 200.0
+speed = 120.0
 radius = 16
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

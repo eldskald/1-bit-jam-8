@@ -168,6 +168,7 @@ func _box_jump() -> void:
 	_carrying = false
 	_set_state(State.AIRBORNE)
 	velocity.y = -box_jump_speed
+	velocity.x = _facing * speed
 
 
 func _set_state(new_state: State) -> void:

@@ -376,7 +376,7 @@ _data = {
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_mask = 14
 script = ExtResource("1_rkbax")
-speed = 50.0
+speed = 60.0
 acceleration = 200.0
 air_acceleration = 200.0
 friction = 400.0
@@ -387,7 +387,7 @@ end_jump_multiplier = 0.3
 coyote_jump_time = 0.15
 gravity = 600.0
 fall_speed = 160.0
-float_fall_speed = 40.0
+float_fall_speed = 30.0
 dig_range = Vector2(12, 20)
 radius = 6
 max_shards = 4
