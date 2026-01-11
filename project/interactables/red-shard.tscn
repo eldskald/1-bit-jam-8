@@ -18,7 +18,7 @@ size = Vector2(12, 2)
 collision_layer = 0
 collision_mask = 14
 script = ExtResource("1_k70at")
-gravity = 400.0
+gravity = 600.0
 fall_speed = 160.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

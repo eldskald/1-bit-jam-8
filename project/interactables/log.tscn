@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://crp8htyabt8na"]
+
+[ext_resource type="Script" uid="uid://bvo43q7q68m4q" path="res://interactables/log.gd" id="1_ej2sp"]
+[ext_resource type="Texture2D" uid="uid://buayg4cbwgjxq" path="res://resources/textures/spritesheet.png" id="2_xwqgx"]
+[ext_resource type="Script" uid="uid://0126yehirvr6" path="res://interactables/interact-area.gd" id="3_lp1xa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1uatw"]
+atlas = ExtResource("2_xwqgx")
+region = Rect2(32, 16, 8, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ittkm"]
+size = Vector2(10, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b7ksl"]
+size = Vector2(14, 4)
+
+[node name="Log" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 14
+script = ExtResource("1_ej2sp")
+gravity = 600.0
+fall_speed = 160.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_1uatw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("RectangleShape2D_ittkm")
+
+[node name="InteractArea" type="Area2D" parent="."]
+visible = false
+script = ExtResource("3_lp1xa")
+_prompt = "Take logs"
+metadata/_custom_type_script = "uid://0126yehirvr6"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_b7ksl")
+
+[connection signal="interaction" from="InteractArea" to="." method="_on_interact"]

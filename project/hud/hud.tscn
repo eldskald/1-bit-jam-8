@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ckfiu0skuegje"]
+[gd_scene load_steps=15 format=3 uid="uid://ckfiu0skuegje"]
 
 [ext_resource type="FontFile" uid="uid://c2x1quwgrr3sw" path="res://resources/fonts/Acme 7 Wide Xtnd.ttf" id="1_6ca3a"]
 [ext_resource type="Script" uid="uid://c3hy7gk6mlbdp" path="res://hud/hud.gd" id="2_2gk58"]
@@ -10,9 +10,9 @@ border_color = Color(1, 1, 1, 1)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2gk58"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w8tcp"]
-content_margin_left = 7.0
+content_margin_left = 6.0
 content_margin_top = 0.0
-content_margin_right = 7.0
+content_margin_right = 6.0
 content_margin_bottom = 0.0
 bg_color = Color(0, 0, 0, 1)
 border_width_left = 1
@@ -23,9 +23,9 @@ border_color = Color(1, 1, 1, 1)
 anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2gk58"]
-content_margin_left = 8.0
+content_margin_left = 6.0
 content_margin_top = 0.0
-content_margin_right = 8.0
+content_margin_right = 6.0
 content_margin_bottom = 0.0
 bg_color = Color(0, 0, 0, 1)
 border_width_bottom = 1
@@ -53,6 +53,29 @@ border_width_right = 1
 border_width_bottom = 1
 border_color = Color(1, 1, 1, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ivg5"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1kkc0"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qv4qp"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sh35x"]
+content_margin_left = 1.0
+content_margin_right = 0.0
+bg_color = Color(0, 0, 0, 1)
+expand_margin_left = 2.0
+expand_margin_right = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gms7k"]
+content_margin_left = 1.0
+content_margin_right = 0.0
+bg_color = Color(0, 0, 0, 1)
+expand_margin_left = 2.0
+expand_margin_right = 1.0
+
 [sub_resource type="Theme" id="Theme_318vg"]
 default_font = ExtResource("1_6ca3a")
 BoxContainer/constants/separation = 4
@@ -77,6 +100,11 @@ MarginContainer/constants/margin_left = 4
 MarginContainer/constants/margin_right = 4
 MarginContainer/constants/margin_top = 4
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_318vg")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_0ivg5")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_1kkc0")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_qv4qp")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_sh35x")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_gms7k")
 
 [node name="HUD" type="Control" groups=["hud"]]
 layout_mode = 3
@@ -155,6 +183,21 @@ visible = false
 layout_mode = 2
 toggle_mode = true
 action_mode = 0
+
+[node name="Label2" type="Label" parent="HBoxContainer/MenuSide/VBoxContainer"]
+layout_mode = 2
+text = "Logs"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/MenuSide/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="LogButtons" type="VBoxContainer" parent="HBoxContainer/MenuSide/VBoxContainer/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="FinalTextContainer" type="CenterContainer" parent="."]
 unique_name_in_owner = true

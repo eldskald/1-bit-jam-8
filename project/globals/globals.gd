@@ -16,6 +16,17 @@ const _map = [
 @onready var _hud: HUD = get_tree().get_nodes_in_group("hud")[0]
 @onready var _coords = _first_lv_coords
 
+var _found_logs: Array[int] = []
+
+
+func has_log(id: int) -> bool:
+	return id in _found_logs
+
+
+func add_log(id: int) -> void:
+	_found_logs.append(id)
+	_hud.add_log_button(id)
+
 
 func get_player() -> Player:
 	return _player

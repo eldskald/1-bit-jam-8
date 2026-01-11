@@ -13,6 +13,7 @@ extends Control
 @onready var _final_text_label: Label = %FinalTextLabel
 @onready var _shovel_btn: Button = %ShovelBtn
 @onready var _red_shard_btn: Button = %RedShardBtn
+@onready var _log_buttons: VBoxContainer = %LogButtons
 
 var _next_prompt: String = ""
 
@@ -26,6 +27,12 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	_prompt.text = _next_prompt
 	_next_prompt = ""
+
+
+func add_log_button(id: int) -> void:
+	var btn = LogButton.new()
+	btn.log_id = id
+	_log_buttons.add_child(btn)
 
 
 func set_level_title(new_title: String) -> void:
