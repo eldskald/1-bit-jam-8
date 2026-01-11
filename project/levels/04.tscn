@@ -1,9 +1,406 @@
-[gd_scene load_steps=2 format=4 uid="uid://b3aw5vu2rhevu"]
+[gd_scene load_steps=14 format=4 uid="uid://b3aw5vu2rhevu"]
 
 [ext_resource type="PackedScene" uid="uid://drnfb2ioal1wc" path="res://levels/level.tscn" id="1_fcv03"]
+[ext_resource type="Script" uid="uid://dmguq7ekp4xj0" path="res://interactables/water.gd" id="2_c5uux"]
+[ext_resource type="Texture2D" uid="uid://buayg4cbwgjxq" path="res://resources/textures/spritesheet.png" id="3_anhiq"]
+[ext_resource type="Script" uid="uid://cxprnrywgrwmy" path="res://levels/ending-water.gd" id="4_k76dv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3eok6"]
+size = Vector2(120, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4krvb"]
+texture = ExtResource("3_anhiq")
+texture_region_size = Vector2i(8, 8)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+0:4/0 = 0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, 1, 1, -2, 4, -2, 4, 4, -4, 4)
+0:5/0 = 0
+0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -2, 4, 0, 4, 4, -4, 4)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+1:4/0 = 0
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 2, -4, 2, 4, -4, 4)
+1:5/0 = 0
+1:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 1, -4, 1, 4, -4, 4)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+2:4/0 = 0
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+2:5/0 = 0
+2:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+3:4/0 = 0
+3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, 0, 2, -4, 4, -4, 4, 4, -4, 4)
+3:5/0 = 0
+3:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 0, -4, 2, 0, 4, 0, 4, 4, -4, 4)
+0:6/0 = 0
+0:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+1:6/0 = 0
+1:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+2:6/0 = 0
+2:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+2:7/0 = 0
+2:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+1:7/0 = 0
+1:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+0:7/0 = 0
+0:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+3:6/0 = 0
+3:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+3:7/0 = 0
+3:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+3:8/0 = 0
+3:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -3, -1, -3, 4, 0, 4, 4, -4, 4)
+2:8/0 = 0
+2:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+1:8/0 = 0
+1:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+0:8/0 = 0
+0:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+1:9/0 = 0
+1:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+2:9/0 = 0
+2:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+3:9/0 = 0
+3:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -1, 0, -1, 4, 1, 4, 4, -4, 4)
+2:10/0 = 0
+2:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, 1, 1, -2, 4, -2, 4, 4, -4, 4)
+2:11/0 = 0
+2:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+2:12/0 = 0
+2:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+1:12/0 = 0
+1:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+1:11/0 = 0
+1:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+1:10/0 = 0
+1:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -2, -0.0481658, -2.024083, 4, 0, 4, 4, -4, 4)
+0:10/0 = 0
+0:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+0:11/0 = 0
+0:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+0:12/0 = 0
+0:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+
+[sub_resource type="TileSet" id="TileSet_u3l0h"]
+tile_size = Vector2i(8, 8)
+physics_layer_0/collision_layer = 4
+physics_layer_0/collision_mask = 0
+sources/0 = SubResource("TileSetAtlasSource_4krvb")
+
+[sub_resource type="Animation" id="Animation_anhiq"]
+resource_name = "explode"
+length = 12.0
+step = 0.5
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%Water")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Destructible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+tracks/2/type = "animation"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ExplosionSprite/AnimationPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": PackedStringArray("explosion", "explosion", "explosion"),
+"times": PackedFloat32Array(3, 5, 7)
+}
+tracks/3/type = "animation"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ExplosionSprite2/AnimationPlayer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": PackedStringArray("explosion", "explosion", "explosion"),
+"times": PackedFloat32Array(3.5, 5.5, 7.5)
+}
+tracks/4/type = "animation"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ExplosionSprite3/AnimationPlayer")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"clips": PackedStringArray("explosion", "explosion", "explosion"),
+"times": PackedFloat32Array(4, 6, 8)
+}
+tracks/5/type = "animation"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ExplosionSprite4/AnimationPlayer")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"clips": PackedStringArray("explosion", "explosion", "explosion"),
+"times": PackedFloat32Array(4.5, 6.5, 8.5)
+}
+tracks/6/type = "animation"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ExplosionSprite5/AnimationPlayer")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"clips": PackedStringArray("explosion", "explosion", "explosion"),
+"times": PackedFloat32Array(5, 7, 9)
+}
+tracks/7/type = "animation"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ExplosionSprite6/AnimationPlayer")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"clips": PackedStringArray("explosion", "explosion", "explosion"),
+"times": PackedFloat32Array(5.5, 7.5, 9.5)
+}
+tracks/8/type = "animation"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("ExplosionSprite7/AnimationPlayer")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"clips": PackedStringArray("explosion", "explosion", "explosion"),
+"times": PackedFloat32Array(6, 8, 10)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k76dv"]
+_data = {
+&"explode": SubResource("Animation_anhiq")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4krvb"]
+atlas = ExtResource("3_anhiq")
+region = Rect2(32, 24, 16, 64)
+
+[sub_resource type="Animation" id="Animation_u3l0h"]
+resource_name = "explosion"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true, false, true, false, true, false, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_3eok6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5ev5w"]
+_data = {
+&"RESET": SubResource("Animation_3eok6"),
+&"explosion": SubResource("Animation_u3l0h")
+}
 
 [node name="Level" instance=ExtResource("1_fcv03")]
 _title = "Fountain"
 
 [node name="BlocksLayer" parent="." index="1"]
-tile_map_data = PackedByteArray("AAADABAAAAAAAAgAAAAEABAAAAAAAAgAAAAFABAAAAAAAAgAAAAGABAAAAAAAAgAAAAHABAAAAAAAAgAAAAIABAAAAAAAAgAAAAJABAAAAAAAAgAAAAKABAAAAAAAAgAAAALABAAAAAAAAgAAAAMABAAAAAAAAgAAAANABAAAAAAAAgAAAAOABAAAAAAAAgAAAAPABAAAAAAAAgAAAAQABAAAAAAAAgAAAARABAAAAAAAAgAAAASABAAAAAAAAgAAAATABAAAAAAAAgAAAATAA8AAAAAAAgAAAATAA4AAAAAAAgAAAATAA0AAAAAAAgAAAADAA8AAAAAAAgAAAADAA4AAAAAAAgAAAADAA0AAAAAAAgAAAAUAA0AAAABAAEAAAAVAA0AAAABAAEAAAAWAA0AAAABAAEAAAAXAA0AAAABAAEAAAACAA0AAAABAAEAAAABAA0AAAABAAEAAAAAAA0AAAABAAEAAAACAA4AAAABAAIAAAACAA8AAAABAAIAAAACABAAAAABAAIAAAACABEAAAABAAIAAAABABEAAAABAAIAAAABABAAAAABAAIAAAABAA8AAAABAAIAAAABAA4AAAABAAIAAAAAAA4AAAABAAIAAAD//w4AAAADAAIAAAAAAA8AAAABAAIAAAAAABAAAAABAAIAAAAAABEAAAABAAIAAAADABEAAAABAAIAAAAEABEAAAABAAIAAAAFABEAAAABAAIAAAAGABEAAAABAAIAAAAHABEAAAABAAIAAAAIABEAAAABAAIAAAAJABEAAAABAAIAAAAKABEAAAABAAIAAAALABEAAAABAAIAAAAMABEAAAABAAIAAAANABEAAAABAAIAAAAOABEAAAABAAIAAAAPABEAAAABAAIAAAAQABEAAAABAAIAAAARABEAAAABAAIAAAASABEAAAABAAIAAAATABEAAAABAAIAAAAUABEAAAABAAIAAAAUABAAAAABAAIAAAAUAA8AAAABAAIAAAAUAA4AAAABAAIAAAAVAA4AAAABAAIAAAAVAA8AAAABAAIAAAAVABAAAAABAAIAAAAVABEAAAABAAIAAAAWABEAAAABAAIAAAAWABAAAAABAAIAAAAWAA8AAAABAAIAAAAWAA4AAAABAAIAAAAXAA4AAAABAAIAAAAXAA8AAAABAAIAAAAXABAAAAABAAIAAAAXABEAAAABAAIAAAD//wAAAAADAAIAAAD//wEAAAADAAIAAAD//wIAAAADAAIAAAD//wMAAAADAAIAAAD//wQAAAADAAIAAAD//wUAAAADAAIAAAD//wYAAAADAAIAAAD//wcAAAADAAIAAAD//wgAAAADAAIAAAD//wkAAAADAAIAAAD//woAAAADAAIAAAD//wsAAAADAAIAAAD//wwAAAADAAIAAAD//w0AAAADAAIAAAD//w8AAAADAAIAAAD//xAAAAADAAIAAAD//xEAAAADAAIAAAA=")
+tile_map_data = PackedByteArray("AAADABAAAAAAAAgAAAAEABAAAAAAAAgAAAAFABAAAAAAAAgAAAAGABAAAAAAAAgAAAAHABAAAAAAAAgAAAAPABAAAAAAAAgAAAAQABAAAAAAAAgAAAARABAAAAAAAAgAAAASABAAAAAAAAgAAAATABAAAAAAAAgAAAATAA8AAAAAAAgAAAATAA4AAAAAAAgAAAATAA0AAAAAAAgAAAADAA8AAAAAAAgAAAADAA4AAAAAAAgAAAADAA0AAAAAAAgAAAAUAA0AAAABAAEAAAAVAA0AAAABAAEAAAAWAA0AAAABAAEAAAAXAA0AAAABAAEAAAACAA0AAAABAAEAAAABAA0AAAABAAEAAAAAAA0AAAABAAEAAAACAA4AAAABAAIAAAACAA8AAAABAAIAAAACABAAAAABAAIAAAACABEAAAABAAIAAAABABEAAAABAAIAAAABABAAAAABAAIAAAABAA8AAAABAAIAAAABAA4AAAABAAIAAAAAAA4AAAABAAIAAAD//w4AAAADAAIAAAAAAA8AAAABAAIAAAAAABAAAAABAAIAAAAAABEAAAABAAIAAAADABEAAAABAAIAAAAEABEAAAABAAIAAAAFABEAAAABAAIAAAAGABEAAAABAAIAAAAHABEAAAAAAAgAAAAPABEAAAAAAAgAAAAQABEAAAABAAIAAAARABEAAAABAAIAAAASABEAAAABAAIAAAATABEAAAABAAIAAAAUABEAAAABAAIAAAAUABAAAAABAAIAAAAUAA8AAAABAAIAAAAUAA4AAAABAAIAAAAVAA4AAAABAAIAAAAVAA8AAAABAAIAAAAVABAAAAABAAIAAAAVABEAAAABAAIAAAAWABEAAAABAAIAAAAWABAAAAABAAIAAAAWAA8AAAABAAIAAAAWAA4AAAABAAIAAAAXAA4AAAABAAIAAAAXAA8AAAABAAIAAAAXABAAAAABAAIAAAAXABEAAAABAAIAAAD//wAAAAADAAIAAAD//wEAAAADAAIAAAD//wIAAAADAAIAAAD//wMAAAADAAIAAAD//wQAAAADAAIAAAD//wUAAAADAAIAAAD//wYAAAADAAIAAAD//wcAAAADAAIAAAD//wgAAAADAAIAAAD//wkAAAADAAIAAAD//woAAAADAAIAAAD//wsAAAADAAIAAAD//wwAAAADAAIAAAD//w0AAAADAAIAAAD//w8AAAADAAIAAAD//xAAAAADAAIAAAD//xEAAAADAAIAAAA=")
+
+[node name="Water" type="Node2D" parent="." index="4"]
+unique_name_in_owner = true
+position = Vector2(32, 108)
+script = ExtResource("2_c5uux")
+water_size = Vector2(120, 20)
+surface_pos_y = 0.0
+segment_count = 32
+player_splash_multiplier = 0.4
+water_physics_speed = 40.0
+wave_energy_loss = 0.005
+metadata/_custom_type_script = "uid://dmguq7ekp4xj0"
+
+[node name="Area2D" type="Area2D" parent="." index="5"]
+position = Vector2(32, 107)
+collision_layer = 0
+collision_mask = 16
+script = ExtResource("4_k76dv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+visible = false
+position = Vector2(60, 13)
+shape = SubResource("RectangleShape2D_3eok6")
+
+[node name="Destructible" type="TileMapLayer" parent="Area2D" index="1"]
+position = Vector2(-32, -107)
+tile_map_data = PackedByteArray("AAAIABAAAAAAAAgAAAAJABAAAAAAAAgAAAAKABAAAAAAAAgAAAALABAAAAAAAAgAAAAMABAAAAAAAAgAAAANABAAAAAAAAgAAAAOABAAAAAAAAgAAAA=")
+tile_set = SubResource("TileSet_u3l0h")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Area2D" index="2"]
+libraries = {
+&"": SubResource("AnimationLibrary_k76dv")
+}
+
+[node name="ExplosionSprite" type="Sprite2D" parent="Area2D" index="3"]
+visible = false
+position = Vector2(12, -2)
+texture = SubResource("AtlasTexture_4krvb")
+vframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Area2D/ExplosionSprite" index="0"]
+libraries = {
+&"": SubResource("AnimationLibrary_5ev5w")
+}
+
+[node name="ExplosionSprite2" type="Sprite2D" parent="Area2D" index="4"]
+visible = false
+position = Vector2(28, -10)
+texture = SubResource("AtlasTexture_4krvb")
+vframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Area2D/ExplosionSprite2" index="0"]
+libraries = {
+&"": SubResource("AnimationLibrary_5ev5w")
+}
+
+[node name="ExplosionSprite3" type="Sprite2D" parent="Area2D" index="5"]
+visible = false
+position = Vector2(44, -2)
+texture = SubResource("AtlasTexture_4krvb")
+vframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Area2D/ExplosionSprite3" index="0"]
+libraries = {
+&"": SubResource("AnimationLibrary_5ev5w")
+}
+
+[node name="ExplosionSprite4" type="Sprite2D" parent="Area2D" index="6"]
+visible = false
+position = Vector2(60, -10)
+texture = SubResource("AtlasTexture_4krvb")
+vframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Area2D/ExplosionSprite4" index="0"]
+libraries = {
+&"": SubResource("AnimationLibrary_5ev5w")
+}
+
+[node name="ExplosionSprite5" type="Sprite2D" parent="Area2D" index="7"]
+visible = false
+position = Vector2(76, -2)
+texture = SubResource("AtlasTexture_4krvb")
+vframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Area2D/ExplosionSprite5" index="0"]
+libraries = {
+&"": SubResource("AnimationLibrary_5ev5w")
+}
+
+[node name="ExplosionSprite6" type="Sprite2D" parent="Area2D" index="8"]
+visible = false
+position = Vector2(92, -10)
+texture = SubResource("AtlasTexture_4krvb")
+vframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Area2D/ExplosionSprite6" index="0"]
+libraries = {
+&"": SubResource("AnimationLibrary_5ev5w")
+}
+
+[node name="ExplosionSprite7" type="Sprite2D" parent="Area2D" index="9"]
+visible = false
+position = Vector2(108, -2)
+texture = SubResource("AtlasTexture_4krvb")
+vframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Area2D/ExplosionSprite7" index="0"]
+libraries = {
+&"": SubResource("AnimationLibrary_5ev5w")
+}
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
