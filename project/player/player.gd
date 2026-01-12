@@ -75,7 +75,7 @@ func click_on(pos: Vector2) -> void:
 	if not _is_controllable():
 		return
 	if _shovel_equipped:
-		if not is_on_floor() and not _carrying:
+		if not is_on_floor() or _carrying:
 			return
 		if abs(pos.x - position.x) > dig_range.x or abs(pos.y - position.y) > dig_range.y:
 			return

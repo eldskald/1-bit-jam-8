@@ -38,8 +38,8 @@ shape = SubResource("RectangleShape2D_cvmkx")
 [node name="Messenger2" type="Area2D" parent="." index="5"]
 position = Vector2(57, 96)
 script = ExtResource("2_il0wa")
-_message_1 = "After almost 300 years we finally found it! The entrance to the ancient capital of the Ancient Nemorian Empire, finally found! This is a great day for us archeologists! Maybe we can learn how it got destroyed?"
-_message_2 = "The city was once the center of the world, but was completely destroyed in the war that preceded the fall of the empire. With the years, the location of the ruins was lost."
+_message_1 = "After almost 300 years we finally found it! The entrance to the ancient capital of the Old Nemorian Empire, finally found! This is a great day for us archeologists! Maybe we can learn how it got destroyed?"
+_message_2 = "The city was once the center of the world, but was completely destroyed in the war that preceded the fall of the empire. With the years, the location of the ruins was lost, as well as its name."
 _prompt = "Talk"
 metadata/_custom_type_script = "uid://cg7g7hmr4m00w"
 metadata/_edit_group_ = true
@@ -55,7 +55,7 @@ shape = SubResource("RectangleShape2D_cvmkx")
 [node name="Messenger3" type="Area2D" parent="." index="6"]
 position = Vector2(153, 72)
 script = ExtResource("2_il0wa")
-_message_1 = "The Nemorians at their peak controlled all the known world at the time's trade routes. They had superior magics, capable of building flying machines. Most of which was lost after the war."
+_message_1 = "The Nemorians at their peak controlled all the trade routes of the known world at the time. They had superior magics, capable of building flying machines. Most of which was lost after the war, even this city's name!"
 _message_2 = "Supposedly, the capital was so badly destroyed that nothing was left to restore. No one returned, no reason to. No wonder it's location was forgotten. A war so destructive that this city was erased from both space and time."
 _prompt = "Talk"
 metadata/_custom_type_script = "uid://cg7g7hmr4m00w"
