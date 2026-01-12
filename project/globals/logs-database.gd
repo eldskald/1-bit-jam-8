@@ -77,6 +77,36 @@ const _logs = [
 		text_1 = "[Research notes, around 300 years ago]\nThe boxes have so much Blue Crystal that a well placed impact from a Red Crystal causes a reaction that turns them into pure dirt. Need more Red Crystal samples for further testing.",
 		text_2 = "The Red Crystal mines just reopened due to the war and the need for weapons, but accidents are happening too often. Must handle the next experiment with care.",
 	},
+	{# id 15
+		title = "Art 3",
+		text_1 = "[Nemorian Hymn, composed more than 1,000 years ago. This is a song about war, conquest and taking the spoils, about how its kings were destined to rule and chosen by the gods.]",
+		text_2 = "",
+	},
+	{# id 16
+		title = "Sign 3",
+		text_1 = "[Metal sign, dated to more than 700 years]\nPassage to the ruins is strictly forbidden. Only the King can grant passage.",
+		text_2 = "",
+	},
+	{# id 17
+		title = "Elioran 1",
+		text_1 = "[Elioran clay tablet, with cuneiform writings, around 2,000 years old]\nThe wise miner knows not to break the Red Crystals. The wise mage knows to keep them apart from Blue Crystals.",
+		text_2 = "",
+	},
+	{# id 18
+		title = "Sign 4",
+		text_1 = "[Metal sign, dated to around 300 years]\nCareful with your Float Boxes, these lands are rich with Red Crystals, which react with and ruin the Float Boxes.",
+		text_2 = "",
+	},
+	{# id 19
+		title = "Elioran 2",
+		text_1 = "[Elioran clay tablet, with cuneiform writings, around 2,000 years old]\nThe impact between Red and Blue Crystals liberates the energy of creation. Workable dirt is the result.",
+		text_2 = "",
+	},
+	{# id 20
+		title = "Sign 5",
+		text_1 = "[Metal sign, dated to around 300 years ago]\nWARNING: DO NOT UNDER ANY CIRCUMSTANCE THROW THE BLUE CRYSTALS ON WATER OR VICE VERSA!!!!!",
+		text_2 = "",
+	},
 ]
 
 static func get_log(id: int) -> Dictionary:
