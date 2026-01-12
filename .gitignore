@@ -1,3 +1,4 @@
 project/**/*.import
 project/export_presets.cfg
 project/.godot/
+exports/
